@@ -46,14 +46,17 @@ function App() {
           copy[i] = copy[i]+1;
           변경(copy)
         }}>👍</span> {like[i]}
+        </h4>
+            <p>1월 22일 발행</p>
           <button onClick={(e)=>{
             e.stopPropagation();
             let copy = [...title];
             copy.splice(i,1);
             setTitle(copy)
+            let copy2 = [...like];
+            copy2.splice(i,1);
+            변경(copy2);
           }}>❌</button>
-        </h4>
-            <p>1월 22일 발행</p>
           </div>
           )
         })
@@ -64,7 +67,7 @@ function App() {
         let copy = [...title];
         copy.unshift(value);
         setTitle(copy);
-      }}>버튼임</button>
+      }}>글발행</button>
       {
         modal == false ? <Modal title={title} setTitle={setTitle} title2={title2} setTitle2 = {setTitle2}/> : null
       }
